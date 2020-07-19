@@ -19,5 +19,5 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_install() {
-	make DETSDIR=${D} install || die "make install failed"
+	make DETSDIR="${D}" install || die "make install failed"
 }
