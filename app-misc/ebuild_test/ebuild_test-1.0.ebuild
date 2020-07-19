@@ -23,5 +23,5 @@ BDEPEND=""
 src_install() {
 	einfo ${S}
 	einfo ${D}
-	make DETSDIR="${S}" install || die "make install failed"
+	make DETSDIR=${S} install || die "make install failed"
 }
