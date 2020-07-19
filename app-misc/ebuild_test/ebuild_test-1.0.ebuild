@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="Ebuild simply demo"
 HOMEPAGE="https://github.com/wellWINeo/ebuild_test"
-SRC_URI="https://github.com/wellWINeo/${PN}/archive/${P}.tar.gz"
+SRC_URI="https://github.com/wellWINeo/${PN}/archive/${PV}.tar.gz"
 
 LICENSE="*"
 SLOT="0"
