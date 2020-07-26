@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-S="${WORKDIR}/${P}"
+S="${WORKDIR}"/${P}
 
 
 
@@ -23,5 +23,5 @@ BDEPEND=""
 src_install() {
 	einfo ${S}
 	einfo ${D}
-	make DETSDIR=${S} install || die "make install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 }
