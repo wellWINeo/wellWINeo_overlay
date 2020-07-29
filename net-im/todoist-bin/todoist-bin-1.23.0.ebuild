@@ -8,8 +8,8 @@ inherit desktop pax-utils unpacker xdg-utils
 DESCRIPTION="Electron wrapper for todoist web client."
 HOMEPAGE="https://github.com/KryDos/todoist-linux"
 
-RAW_PN="${PN/-bin/}"
-SRC_URI="https://github.com/KryDos/todoist-linux/releases/download/${PV}/${RAW_PN}_${PV}_amd64.deb -> ${P}.deb"
+MY_PN="${PN/-bin/}"
+SRC_URI="https://github.com/KryDos/todoist-linux/releases/download/${PV}/${MY_PN}_${PV}_amd64.deb -> ${P}.deb"
 
 LICENSE="MIT"
 SLOT="0"
@@ -42,23 +42,23 @@ S=${WORKDIR}
 src_prepare() {
 		default
 
-		sed -i usr/share/icons/hicolor/512x512/apps/todoist.png \
+		sed -i usr/share/icons/hicolor/512x512/apps/${MY_PN}.png \
 		-e 's|opt/todoist|opt/Todoist'
 }
 
 src_install() {
-		doicon usr/share/icons/hicolor/512x512/apps/todoist.png
+		doicon usr/share/icons/hicolor/512x512/apps/${MY_PN}.png
 		
-		doicon -s 512 usr/share/icons/hicolor/512x512/apps/todoist.png
+		doicon -s 512 usr/share/icons/hicolor/512x512/apps/${MY_PN}.png
 
-		domenu usr/share/applications/todoist.desktop
+		domenu usr/share/applications/${MY_PN}.desktop
 
 		insinto /opt
-		doins -r opt/todoist
-		fperms +x /opt/todoist/todoist
-		dosym ../../opt/todoist/todoist usr/bin/todoist
+		doins -r opt/Todoist
+		fperms +x /opt/Todoist/${MY_PN}
+		dosym ../../opt/todoist/${MY_PN} usr/bin/${MY_PN}
 
-		pax-mark -m "${ED%/}"/opt/todoist/todoist
+		pax-mark -m "${ED%/}"/opt/${MY_PN}/${MY_PN}
 }
 
 pkg_postinst() {
