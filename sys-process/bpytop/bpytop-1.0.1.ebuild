@@ -17,9 +17,9 @@ S="${WORKDIR}/${P}"
 
 BDEPEND="sys-devel/make"
 
-RDEPEND=">=dev-lang/python-3.6.0"
+RDEPEND=">=dev-python/psutil-5.7.0
+		>=dev-lang/python-3.6.0"
 
 src_install() {
 		make DESTDIR=${D} install || "make install failed"
-		python -m pip install psutil
 }
