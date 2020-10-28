@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=VSCodium
+Type=Application
+Comment=Free/Libre Open Source Software Binaries of VSCode
+Exec=codium %F
+TryExec=codium
+Icon=vscodium
+Categories=Development;IDE;
